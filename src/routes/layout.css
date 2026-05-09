@@ -1,0 +1,11 @@
+@import url("https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&display=swap");
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-shiroko-1: #242940;
+  --color-shiroko-2: #6efdff;
+  --color-shiroko-3: #cafd24;
+  --color-shiroko-4: #0f0e13;
+  --color-shiroko-5: #494957;
+}
