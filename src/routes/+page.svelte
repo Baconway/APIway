@@ -6,7 +6,7 @@
 <img class="h-65 object-contain" src="/bigsalt.png" alt="big salt" />
 
 <Seperator divider_color="bg-shiroko-2" />
-
+<title>Home</title>
 <article
   class="prose
   prose-h1:text-white prose-h1:border-b-2 prose-h1:border-b-shiroko-3 prose-h1:p-3 prose-h1:my-5

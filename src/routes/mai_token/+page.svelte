@@ -6,7 +6,7 @@
 <img class="h-65" src="/bigdrkm.png" alt="big derakuma" />
 
 <Seperator divider_color="bg-shiroko-2" />
-
+<title>mai_token</title>
 <!--https://tjaddison.com/blog/2020/08/updating-to-tailwind-typography-to-style-markdown-posts/-->
 <article
   class="prose
