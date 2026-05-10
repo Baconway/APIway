@@ -1,11 +1,17 @@
 @import url("https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&display=swap");
 @import "tailwindcss";
-@custom-variant dark (&:where(.dark, .dark *));
+@plugin '@tailwindcss/typography';
 
+@custom-variant dark (&:where(.dark, .dark *));
 @theme {
-  --color-shiroko-1: #242940;
-  --color-shiroko-2: #6efdff;
-  --color-shiroko-3: #cafd24;
-  --color-shiroko-4: #0f0e13;
-  --color-shiroko-5: #494957;
+  --color-shiroko-1: rgb(36, 41, 64);
+  --color-shiroko-2: rgb(110, 253, 255);
+  --color-shiroko-3: rgb(202, 253, 36);
+  --color-shiroko-4: rgb(15, 14, 19);
+  --color-shiroko-5: rgb(73, 73, 87);
+  --color-salt-1: rgb(206, 255, 255);
+  --color-salt-2: rgb(214, 140, 123);
+  --color-salt-3: rgb(16, 181, 247);
+  --color-salt-4: rgb(0, 0, 0);
+  --color-salt-5: rgb(132, 16, 0);
 }

@@ -1,47 +1,30 @@
-<p class="text-3xl">mai_token API</p>
-<p>
-  Used to get an account's token on all.net, to use with websites like
-  maimaiDXNET and chunithmNET
-</p>
+<script lang="ts">
+  import Seperator from "$lib/components/seperator.svelte";
+  import Docs from "$lib/doc/mai_token.svx";
+</script>
 
-<p class="text-2xl">Format</p>
-<p class="text-lg">
-  Url: <span class="bg-shiroko-5">https://apiway.vercel.app/api/mai_token/</span
-  >
-</p>
+<img class="h-70" src="/bigdrkm.png" alt="big derakuma" />
 
-<p>Methods:</p>
-<ol class="list-inside list-decimal">
-  <li><a href="#sid">SegaID</a></li>
-  <li>Token (Console)</li>
-</ol>
+<Seperator divider_color="bg-shiroko-2" />
 
-<p id="sid">SegaID</p>
-<p class="text-lg">
-  <span>POST</span>
-  Url:
-  <span class="bg-shiroko-5">https://apiway.vercel.app/api/mai_token/login</span
-  >
-</p>
-
-<p>JSON Format</p>
-<ul class="list-inside list-disc">
-  <li>login_mode: 'sid'</li>
-  <li>sid: SegaID (string)</li>
-  <li>password: SID password (string)</li>
-</ul>
-
-<p id="sid">Token</p>
-<p class="text-lg">
-  <span>GET</span>
-  Url:
-  <span class="bg-shiroko-5"
-    >https://apiway.vercel.app/api/mai_token/login_bookmark</span
-  >
-</p>
-
-<p>JSON Format</p>
-<ul class="list-inside list-disc">
-  <li>login_mode: 'token'</li>
-  <li>redirect: where you want the data to end up (url)</li>
-</ul>
+<!--https://tjaddison.com/blog/2020/08/updating-to-tailwind-typography-to-style-markdown-posts/-->
+<article
+  class="prose
+  prose-h1:text-4xl prose-h1:font-bold prose-h1:mb-4 prose-h1:px-4 prose-h1:py-2 prose-h1:m-0 prose-h1:text-white
+  prose-h2:text-3xl prose-h2:font-semibold prose-h2:mb-3 prose-h2:px-4 prose-h2:py-1.5 prose-h2:m-0 prose-h2:text-white
+  prose-h3:text-xl prose-h3:font-medium prose-h3:mb-2 prose-h3:px-4 prose-h3:py-1 prose-h3:m-0 prose-h3:text-white
+  prose-h4:text-lg prose-h4:font-normal prose-h4:mb-1 prose-h4:px-4 prose-h4:py-0.5 prose-h4:m-0 prose-h4:text-white
+  prose-h5:text-base prose-h5:font-normal prose-h5:mb-1 prose-h5:px-4 prose-h5:py-0.5 prose-h5:m-0 prose-h5:text-white
+  prose-h6:text-sm prose-h6:font-normal prose-h6:mb-1 prose-h6:px-4 prose-h6:py-0.5 prose-h6:m-0 prose-h6:text-white
+  prose-p:leading-relaxed prose-p:mb-4 prose-p:m-0 prose-p:text-white
+  prose-ul:mb-4 prose-ul:pl-8 prose-ol:mb-4 prose-ol:pl-8
+  prose-li:mb-2 prose-li:text-white
+  prose-strong:text-white
+  prose-code:bg-gray-100 prose-code:px-2 prose-code:py-1 prose-code:rounded prose-code:text-shiroko-5
+  prose-pre:bg-gray-100 prose-pre:p-4 prose-pre:rounded prose-pre:overflow-x-auto
+  prose-pre:prose-code:p-0 prose-pre:prose-code:bg-transparent
+  prose-a:text-blue-600 prose-a:no-underline prose-a:hover:underline
+"
+>
+  <Docs />
+</article>

@@ -1,5 +1,9 @@
-<img class="object-contain" src="/bigsalt.png" alt="big salt" />
+<script lang="ts">
+  import Seperator from "$lib/components/seperator.svelte";
+</script>
 
-<div class="w-lg bg-black h-0.5 m-2"></div>
+<img class="h-70 object-contain" src="/bigsalt.png" alt="big salt" />
+
+<Seperator divider_color="bg-shiroko-2" />
 
 <h1 class="text-5xl">APIWay</h1>

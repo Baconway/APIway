@@ -1,0 +1,36 @@
+# mai_token API
+
+Used to get an account's token on all.net, to use with websites like maimaiDXNET and chunithmNET
+
+## Format
+
+**URL:** [`https://apiway.vercel.app/api/mai_token/`](https://apiway.vercel.app/api/mai_token/)
+
+### Methods
+
+#### SegaID
+
+**Method:** POST
+
+**URL:** [`https://apiway.vercel.app/api/mai_token/login`](https://apiway.vercel.app/api/mai_token/login)
+
+##### JSON Format
+
+Parameters for SegaID login
+
+- **login_mode**: `sid`
+- **sid**: SegaID (string)
+- **password**: SID password (string)
+
+#### Token
+
+**Method:** GET
+
+**URL:** [`https://apiway.vercel.app/api/mai_token/login_bookmark`](https://apiway.vercel.app/api/mai_token/login_bookmark)
+
+##### JSON Format
+
+Parameters for Token login
+
+- **login_mode**: `token`
+- **redirect**: where you want the data to end up (url)
