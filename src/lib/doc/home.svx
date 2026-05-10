@@ -1,0 +1,9 @@
+# APIway
+
+A collection of APIs that I will continue to build on.
+
+## Update Frequency
+
+Rarely (Unless I feel like doing it).
+
+### Open the sidebar to see the list of available APIs
