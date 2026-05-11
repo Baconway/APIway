@@ -4,7 +4,7 @@ Used to get an account's token on all.net, to use with websites like maimaiDXNET
 
 ## Format
 
-**URL:** [`https://apiway.vercel.app/api/mai_token/`](https://apiway.vercel.app/api/mai_token/)
+**URL:** [`https://apiway-bway.vercel.app/mai_token`](https://apiway-bway.vercel.app/mai_token/)
 
 ### Methods
 
@@ -12,7 +12,7 @@ Used to get an account's token on all.net, to use with websites like maimaiDXNET
 
 **Method:** POST
 
-**URL:** [`https://apiway.vercel.app/api/mai_token/login`](https://apiway.vercel.app/api/mai_token/login)
+**URL:** [`https://apiway-bway.vercel.app/mai_token/login`](https://apiway-bway.vercel.app/mai_token/login)
 
 ##### JSON Format
 
@@ -26,7 +26,7 @@ Parameters for SegaID login
 
 **Method:** GET
 
-**URL:** [`https://apiway.vercel.app/api/mai_token/login_bookmark`](https://apiway.vercel.app/api/mai_token/login_bookmark)
+**URL:** [`https://apiway-bway.vercel.app/mai_token/login_bookmark?redirect=url`](https://apiway-bway.vercel.app/mai_token/login_bookmark)
 
 ##### JSON Format
 
@@ -34,3 +34,5 @@ Parameters for Token login
 
 - **login_mode**: `token`
 - **redirect**: where you want the data to end up (url)
+
+- **url**: `SearchParam` (Encoded URL): Where the bookmark will send the data back to

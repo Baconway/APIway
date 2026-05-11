@@ -12,13 +12,24 @@ const corsHeaders = {
 };
 
 export const GET: RequestHandler = ({ url }) => {
-  const script = `function postCookies() {const url = fetch("${url.origin}/api/mai_token/login,", {method: "POST",headers: {"Content-Type": "application/json",},body: JSON.stringify({login_mode: "token", cookies: document.cookie, }), redirect: "manual", });} postCookies();`;
+  if (!url.searchParams.get("redirect")) {
+    return new Response(null, {
+      status: 400,
+      statusText: "OK",
+      headers: {
+        ...corsHeaders,
+      },
+    });
+  }
+  const script = `function postCookies() {const url = fetch("${url.origin}/api/mai_token/login,", {method: "POST",headers: {"Content-Type": "application/json",},body: JSON.stringify({login_mode: "token", cookies: document.cookie, redirect: "${decodeURI(url.searchParams.get("redirect") as string)}"}), redirect: "manual", });} postCookies();`;
 
   return new Response(script, {
     status: 200,
     statusText: "OK",
     headers: {
       ...corsHeaders,
+      "Content-Type": "application/javascript; charset=utf-8",
+      "Cache-Control": "no-store",
     },
   });
 };

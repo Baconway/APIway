@@ -29,9 +29,17 @@ function ProcessCookie(blob: string | null) {
   }
 }
 
+export const OPTIONS: RequestHandler = () => {
+  const response = new Response(null, {
+    status: 204,
+  });
+
+  return withCors(response);
+};
+
 export const POST: RequestHandler = async ({ request }) => {
   // learnt everything from tomomai repo: https://github.com/shedaniel/tomomai/blob/main/src/server/services/maimai-login.ts#L342
-  const { login_mode, sid, password, cookies } = await request.json();
+  const { login_mode, sid, password, cookies, redirect } = await request.json();
 
   const checkStatus = await fetch(checkPageUrl, {
     method: "GET",
@@ -94,7 +102,7 @@ export const POST: RequestHandler = async ({ request }) => {
       return withCors(response);
     }
 
-    await fetch(checkPageUrl, {
+    const LoginConfirmation = await fetch(checkPageUrl, {
       // look for 302
       method: "GET",
       headers: {
@@ -106,6 +114,18 @@ export const POST: RequestHandler = async ({ request }) => {
       redirect: "manual",
     });
 
+    if (LoginConfirmation.status == 302) {
+      await fetch(redirect, {
+        method: "POST",
+        headers: {
+          "User-Agent":
+            "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Mobile Safari/537.36",
+        },
+        body: JSON.stringify({ userCookie: cook }),
+        redirect: "manual",
+      });
+    }
+
     const response = new Response(
       JSON.stringify({ message: "Token Extracted Successfully" }),
       {
@@ -115,17 +135,10 @@ export const POST: RequestHandler = async ({ request }) => {
 
     return withCors(response);
   }
+
   return new Response(JSON.stringify({ message: "Method not Found" }), {
     status: 400,
   });
-};
-
-export const OPTIONS: RequestHandler = () => {
-  const response = new Response(null, {
-    status: 204,
-  });
-
-  return withCors(response);
 };
 
 export const fallback: RequestHandler = () => {
